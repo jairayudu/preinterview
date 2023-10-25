@@ -1,0 +1,16 @@
+.card {
+  border: none;
+  width: 500px;
+  padding: 40px;
+  left: 60%;
+  background: hsl(205, 46%, 30%);
+  background: linear-gradient(90deg, hsl(205, 46%, 30%) 0%, hsl(260, 29%, 36%));
+}
+
+.card h1,
+h6 {
+  color: #fff;
+}
+label {
+  color: #fff;
+}

@@ -1,0 +1,271 @@
+<h1>quizs</h1>
+<div class="row">
+  <div class="col-8 mx-auto">
+    <button class="btn btn-primary" data-toggle="modal" data-target="#newModal">
+      Create quiz
+    </button>
+  </div>
+  <div class="col-8 mx-auto">
+    <table class="table">
+      <thead>
+        <th>quiz ID</th>
+        <th>quiz Name</th>
+        <th>No. of questions</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of quiz; let i = index">
+          <td>{{ item.quizID }}</td>
+          <td>{{ item.quizName }}</td>
+          <td>{{ item.Noofquestions }}</td>
+          <td>{{ item.id }}</td>
+          <td>
+            <button
+              [routerLink]="'/taketest/' + item.id"
+              class="btn btn-info"
+              data-toggle="modal"
+              data-target="#editModal"
+            >
+              Take Quiz
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<form>
+  <div class="modal" role="dialog" id="newModal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width: 700px">
+        <div class="modal-header">
+          <div class="modal-title">New quiz</div>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group row">
+            <label for="txtnewQuiID" class="col-sm-4 col-form-label"
+              >quiz ID</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="text"
+                id="txtnewQuizID"
+                style="width: 100px"
+                class="form-control"
+                placeholder="quiz ID"
+                name="quizID"
+                [(ngModel)]="newQuiz.quizID"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="txtnewQuiName" class="col-sm-4 col-form-label"
+              >quiz Name</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="text"
+                id="txtnewQuizName"
+                class="form-control"
+                placeholder="quiz Name"
+                name="quizName"
+                [(ngModel)]="newQuiz.quizName"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="txtNewquestions" class="col-sm-4 col-form-label"
+              >No. of questions</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="number"
+                id="txtNewquestions"
+                style="width: 150px"
+                class="form-control"
+                placeholder="No. of questions"
+                name="questions"
+                [(ngModel)]="newQuiz.questions"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="txtNoofquestions" class="col-sm-4 col-form-label"
+              >Team Size</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="number"
+                id="txtNoofquestions"
+                style="width: 150px"
+                class="form-control"
+                placeholder="Team Size"
+                name="Noofquestions"
+                [(ngModel)]="newQuiz.Noofquestions"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <!-- <button class="btn btn-warning" data-dismiss="modal">Cancel</button>
+          <button
+            class="btn btn-success"
+            data-dismiss="modal"
+            (click)="onSaveClick()"
+          >
+            Save
+          </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- Edit quiz -->
+<form>
+  <div class="modal" role="dialog" id="editModal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width: 700px">
+        <div class="modal-header">
+          <div class="modal-title">Edit quiz</div>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group row">
+            <label for="txteditQuizID" class="col-sm-4 col-form-label"
+              >quiz ID</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="text"
+                id="txteditQuizID"
+                style="width: 100px"
+                class="form-control-plain-text"
+                placeholder="quiz ID"
+                name="quizID"
+                [(ngModel)]="editQuiz.quizID"
+                disabled="disabled"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="txteditQuizName" class="col-sm-4 col-form-label"
+              >quiz Name</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="text"
+                id="txteditQuizName"
+                class="form-control"
+                placeholder="quiz Name"
+                name="quizName"
+                [(ngModel)]="editQuiz.quizName"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="txtEditNoofquestions" class="col-sm-4 col-form-label"
+              >no of questions</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="number"
+                id="txtEditNoofquestions"
+                style="width: 150px"
+                class="form-control"
+                placeholder="Team Size"
+                name="Noofquestions"
+                [(ngModel)]="editQuiz.Noofquestions"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <!-- <button class="btn btn-warning" data-dismiss="modal">Cancel</button>
+          <button
+            class="btn btn-success"
+            data-dismiss="modal"
+            (click)="onUpdateClick()"
+          >
+            Update
+          </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- Delete quiz -->
+<form>
+  <div class="modal" role="dialog" id="deleteModal">
+    <div class="modal-dialog">
+      <div class="modal-content" style="width: 700px">
+        <div class="modal-header">
+          <div class="modal-title">Delete quiz</div>
+          <button type="button" class="close" data-dismiss="modal">
+            <span>&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="text-warning">Are you sure to delete this quiz?</div>
+
+          <div class="form-group row">
+            <label for="txtdeleteQuizID" class="col-sm-4 col-form-label"
+              >quiz ID</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="text"
+                id="txtdeleteQuizID"
+                style="width: 100px"
+                class="form-control-plain-text"
+                placeholder="quiz ID"
+                name="quizID"
+                [(ngModel)]="deleteQuiz.quizID"
+                disabled="disabled"
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="txtdeleteQuizName" class="col-sm-4 col-form-label"
+              >quiz Name</label
+            >
+            <div class="col-sm-8">
+              <input
+                type="text"
+                id="txtdeleteQuizName"
+                class="form-control-plain-text"
+                placeholder="quiz Name"
+                name="quizName"
+                [(ngModel)]="deleteQuiz.quizName"
+                disabled="disabled"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <!-- <button class="btn btn-warning" data-dismiss="modal">Cancel</button>
+          <button
+            class="btn btn-success"
+            data-dismiss="modal"
+            (click)="onDeleteConfirmClick()"
+          >
+            Delete
+          </button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

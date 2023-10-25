@@ -1,0 +1,79 @@
+{
+  "quiz": [
+    {
+      "questions": [
+        {
+          "question": "Javascript is an _______ language?",
+          "option1": "object oriented",
+          "option2": "object based",
+          "option3": "procedural",
+          "option4": "none",
+          "correctoption": "object oriented"
+        },
+        {
+          "question": "Which of the following keywords is used to define a variable in Javascript?",
+          "option1": "var",
+          "option2": "let",
+          "option3": "both",
+          "option4": "none",
+          "correctoption": "both"
+        },
+        {
+          "question": "Which of the following methods is used to access HTML elements using Javascript?",
+          "option1": "getElementbyId()",
+          "option2": "getElementsByClassName()",
+          "option3": "both",
+          "option4": "none",
+          "correctoption": "both"
+        },
+        {
+          "question": "Upon encountering empty state",
+          "option1": "throw error",
+          "option2": "ignore statements",
+          "option3": "give warning",
+          "option4": "none",
+          "correctoption": "ignore statements"
+        },
+        {
+          "question": "How can a datatype be declared to be a constant type?",
+          "option1": "const",
+          "option2": "var",
+          "option3": "let",
+          "option4": "constant",
+          "correctoption": "const"
+        }
+      ],
+      "id": 5,
+      "Noofquestions": 5,
+      "quizName": "Javascript"
+    }
+  ],
+  "signupUsers": [
+    {
+      "username": "jai",
+      "password": "123456",
+      "firstName": "jai",
+      "lastName": "rayudu",
+      "email": "jairayudun@gmail.com",
+      "phone": 6281440952,
+      "id": 1,
+      "role": "admin"
+    },
+    {
+      "fullname": "user",
+      "email": "123@gmail.com",
+      "password": "123",
+      "mobile": 3242423,
+      "role": "user",
+      "id": 2
+    },
+    {
+      "fullname": "",
+      "email": "",
+      "password": "",
+      "mobile": "",
+      "role": "",
+      "id": 3
+    }
+  ]
+}
